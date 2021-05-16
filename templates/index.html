@@ -1,0 +1,66 @@
+<html>
+	<head>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+	</head>
+	<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8  offset-lg-2">
+				<h3 class="mt-5">Live №1</h3>
+				<img src="{{ url_for('video_feed') }}" width="100%">
+				<p>
+				</p>
+			</div>
+			<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+			<form method="get" action="/on">
+				<button href="/on" onclick="location.href='/on'" type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Включить</button>
+			</form>
+			<form method="get" action="/off">
+				<button href="/off" onclick="location.href='/off'" type="button" class="btn btn-outline-secondary btn-lg px-4">Выключить</button>
+			</form>
+			</div>
+			<div class="b-example-divider"></div>
+			<div class="col-lg-8  offset-lg-2">
+			<h3 class="mt-5">Настройка записи</h3>
+			<script>
+				document.addEventListener('keydown', function(event) {
+				  if (event.code == 'Enter') {
+					location.href = "/make_pic";
+				  }
+				});
+			</script>
+			<form method="get" action="/on">
+				<button id="909" href="/" onclick="location.href='/make_pic'" type="button" class="btn btn-primary btn-lg px-4 me-sm-3 489">Сделать фото</button>
+				<button href="/record" onclick="location.href='/start_rec'" type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Включить</button>
+			</form>
+			<form method="get" action="/off">
+				<button href="/stop_rec" onclick="location.href='/stop_rec'" type="button" class="btn btn-outline-secondary btn-lg px-4">Выключить</button>
+			</form>
+			</div>
+			<style>
+			.rec {
+				color: green;
+				width: 50;
+				height: 26;
+				position: sticky;
+			}
+			</style>
+			<style>.no_rec{display: none;}</style>
+			<img class="{{ rec }}" src="{{ url_for('static',filename='red.png') }}"></img>
+			<p class="{{ rec }}">Запись</p>
+			<div class="b-example-divider"></div>
+			<div class="col-lg-8  offset-lg-2">
+				<h3 class="mt-5">Раздел загрузок</h3>
+				<p>
+				</p>
+				<a href="/pic">Загрузка изображений</a><br>
+				<a href="/vid">Загрузка видео</a>
+				<br>
+				<p>
+				</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

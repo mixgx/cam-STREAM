@@ -1,0 +1,10 @@
+<head>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+</head>
+<button href="/on" onclick="location.href='/cam'" type="button" class="btn btn-primary btn-lg px-4 me-sm-3"><- Домой</button>
+<div class='container'>
+<h1>Download images</h1>
+{% for pic in pics %}
+	<a href="/pic/{{ pic }}">{{ pic }}</a><a> - image path: app/pic/{{ pic }}</a><br>
+{% endfor %}
+<div>

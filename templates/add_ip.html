@@ -1,0 +1,18 @@
+<head>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+</head>
+<div class="container">
+	<p>
+	</p>
+	<h1>Your ip is not in whitelist!</h1>
+	<p>Please contact whith the site owner! You can write to this mail - <a href="/">doo35568@gmail.com</a></p>
+
+	<h3>Внимание, вы попали на страницу экстренного добавления ip в белый список</h3><br>
+	<h3>Если вы попробуете ввести свой IP в белый список с неправельным паролем, ваш IP будет забанен!</h3><br>
+	<p>Your ip: <a href="/">{{ your_ip }}</a></p>
+	<form action="/final_add_the_ip_hah" method="POST">
+		<input name='pass' placeholder='ADMIN PASSWORD'>
+		<input name="ip" placeholder="IP TO ADD"></p>
+		<input type="submit" value="Submit">
+	</form>
+</div>
